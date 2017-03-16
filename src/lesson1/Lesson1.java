@@ -115,6 +115,8 @@ public class Lesson1 {
     String result = sb.toString();
     System.out.println("Exercise 4 result = " + result);
     
+
+    
     /* YOUR CODE HERE */
   }
 

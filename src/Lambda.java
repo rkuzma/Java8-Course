@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class Lambda {
 	
@@ -36,7 +39,20 @@ public class Lambda {
 
 			}
 		
-
+		
+	    Map<String, Integer> map = new TreeMap<>();
+	    map.put("c", 3);
+	    map.put("b", 2);
+	    map.put("a", 1);
+		
+	    
+	    Map<String,Integer> newMap = 
+	            map.entrySet()
+	                  .stream()
+	                  .filter(u -> u.getValue() > 1)
+	                  .collect(Collectors.toMap(u -> u.getKey(), u -> u.getValue()));
+	    
+	    System.out.println(newMap);
 		
 //		double highScore2 = students.filter(new Predicate<Student>(){
 //			public boolean op(Student s){
